@@ -172,3 +172,4 @@ cython_debug/
 
 # DB files
 *.db
+.vercel
