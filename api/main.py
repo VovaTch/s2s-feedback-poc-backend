@@ -23,7 +23,7 @@ logging.basicConfig(level=logging.INFO)
 dotenv.load_dotenv(override=True)
 
 # SQL create bases
-Base.metadata.create_all(bind=engine)
+# Base.metadata.create_all(bind=engine)
 
 # FastAPI app creation with CORS middleware
 app = FastAPI()
@@ -42,13 +42,13 @@ system_prompt = S2S_SYSTEM_PROMPT
 client = instructor.from_openai(OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
 
 
-# Get session
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+# # Get session
+# def get_db():
+#     db = SessionLocal()
+#     try:
+#         yield db
+#     finally:
+#         db.close()
 
 
 @app.get("/")
